@@ -1,4 +1,5 @@
 com\pappu\banking\observer\AccountObserver.class
+com\pappu\banking\db\DatabaseManager.class
 com\pappu\banking\BankingApplication.class
 com\pappu\banking\strategy\InterestCalculationStrategy.class
 com\pappu\banking\strategy\SimpleInterestStrategy.class

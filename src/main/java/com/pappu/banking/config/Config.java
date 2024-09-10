@@ -1,4 +1,7 @@
 package com.pappu.banking.config;
+// import java.io.FileInputStream;
+// import java.io.IOException;
+// import java.util.Properties;
 
 public class Config {
     private static Config instance;
@@ -7,10 +10,29 @@ public class Config {
     private String dbPassword;
 
     private Config() {
-        // Load from environment variables or configuration file
-        this.dbUrl = "jdbc:mysql://localhost:3306/banking_system_pappu";
-        this.dbUser = "root";
-        this.dbPassword = "password";
+
+        // Load sensitive info from config.properties
+        // Properties properties = new Properties();
+        // try (FileInputStream fis = new FileInputStream("config.properties")) {
+        //     properties.load(fis);
+        //     this.dbUrl = properties.getProperty("db.url");
+        //     this.dbUser = properties.getProperty("db.user");
+        //     this.dbPassword = properties.getProperty("db.password");
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
+
+
+        // Load sensitive info from environment variables
+        this.dbUrl = System.getenv("DB_URL");
+        this.dbUser = System.getenv("DB_USER");
+        this.dbPassword = System.getenv("DB_PASSWORD");
+
+
+        // Fallback to defaults if environment variables are not set
+        if (dbUrl == null) dbUrl = "jdbc:mysql://localhost:3306/XE";
+        if (dbUser == null) dbUser = "another default db_username";
+        if (dbPassword == null) dbPassword = "password for the default db_username";
     }
 
     public static Config getInstance() {
@@ -23,6 +45,7 @@ public class Config {
         }
         return instance;
     }
+
 
     public String getDbUrl() {
         return dbUrl;
