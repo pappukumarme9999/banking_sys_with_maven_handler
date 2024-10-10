@@ -1,0 +1,63 @@
+com.bankingsystem
+│
+├── config                  # Singleton for configuration settings
+│   └── Config.java
+│
+├── controller              # Controllers following MVC
+│   └── BankingController.java
+│
+├── dao                     # Data Access Objects
+│   └── AccountDAO.java
+│
+├── factory                 # Factory pattern for creating accounts
+│   └── AccountFactory.java
+│
+├── model                   # Domain models
+│   ├── Account.java
+│   ├── SavingsAccount.java
+│   └── CheckingAccount.java
+│
+├── observer                # Observer pattern for logging, etc.
+│   ├── AccountObserver.java
+│   └── TransactionObserver.java
+│
+├── service                 # Business logic
+│   └── BankingService.java
+│
+└── strategy                # Strategies for interest calculation
+    └── InterestCalculationStrategy.java
+
+
+
+
+
+banking_system_pappu
+│
+├── src
+│   └── main
+│       └── java
+│           └── com
+│               └── pappu
+│                   └── banking
+│                       ├── BankingApplication.java
+│                       ├── config
+│                       │   └── Config.java
+│                       │   └── config.properties
+│                       ├── controller
+│                       │   └── BankingController.java
+│                       ├── dao
+│                       │   └── AccountDAO.java
+|			├── db
+│                       │   └── DatabaseManager.java
+│                       ├── factory
+│                       │   └── AccountFactory.java
+│                       ├── model
+│                       │   ├── Account.java
+│                       │   ├── CheckingAccount.java
+│                       │   └── SavingsAccount.java
+│                       ├── observer
+│                       │   ├── AccountObserver.java
+│                       │   └── TransactionObserver.java
+│                       └── service
+│                           └── BankingService.java
+└── pom.xml
